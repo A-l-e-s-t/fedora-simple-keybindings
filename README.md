@@ -121,6 +121,7 @@ If you have ideas for additional keybindings, feel free to share them.
 
 
 </details>
+
 ## Set Up
 Install `zsh`:
 ```bash
