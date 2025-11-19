@@ -8,6 +8,10 @@ dconf dump /org/gnome/shell/keybindings/ > backup/shell-keybindings-backup.dconf
 dconf dump /org/gnome/desktop/wm/keybindings/ > backup/wm-keybindings-backup.dconf
 dconf dump /org/gnome/settings-daemon/plugins/media-keys/ > backup/media-keys-backup.dconf
 
+chmod +x revert-keybindings.sh
+chmod +x delete-custom-keybinding.sh
+chmod +x set-custom-keybinding.sh
+
 echo "Applying Alest's Fedora GNOME Simple Keybindings..."
 
 
@@ -128,7 +132,6 @@ volume-up=['<Alt><Super>Up']
 www=['<Control><Super>b']
 EOF
 
-chmod +x set-custom-keybinding.sh
 ./set-custom-keybinding.sh 19325301 "Force Suspend" "systemctl suspend -i" "<Shift><Super>s" --silent
 ./set-custom-keybinding.sh 19325302 "Open Files" "nautilus --new-window" "<Control><Super>f" --silent
 ./set-custom-keybinding.sh 19325303 "Open Terminal" "ptyxis --new-window" "<Control><Super>t" --silent

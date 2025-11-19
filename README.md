@@ -143,7 +143,12 @@ Run `apply-keybindings.sh` (backs up your current keybindings):
 ```bash
 ./apply-keybindings.sh
 ```
-You have installed my keybindings. You can also install additional optional keybindings.
+You have installed my keybindings. You can also install additional custom keybindings.
+
+If you want to revert to your old keybindings:
+```bash
+./revert-keybindings.sh
+```
 
 ## Additional Custom Keybindings
 ### Windows Switching Behavior
@@ -238,7 +243,16 @@ Set keybindings
 ./set-custom-keybinding.sh 19325307 "Laptop monitor brightness up" "brightnessctl set +5%" "<Alt><Super>Page_Up"
 ./set-custom-keybinding.sh 19325308 "Laptop monitor brightness down" "brightnessctl set 5%-" "<Alt><Super>Page_Down"
 ```
+Revert
+```bash
+./delete-custom-keybinding.sh 19325307
+./delete-custom-keybinding.sh 19325308
+
+sudo dnf remove brightnessctl
+```
+
 
 `brightnessctl` is especially useful because it can dim your screen completely (to 0%).
 
-Note: If you want to control external monitor brightness use `ddcutil` (via DDC)
+If you want to control external monitor brightness use `ddcutil` (via DDC)
+
